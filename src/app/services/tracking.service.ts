@@ -1,3 +1,4 @@
+
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -33,5 +34,14 @@ export class TrackingService {
       'Authorization': `Bearer ${this.supabaseKey}`
     });
     return this.http.get<TrackingRecord[]>(this.supabaseUrl, { headers });
+  }
+
+  addTrackingRecord(record: Partial<TrackingRecord>): Observable<any> {
+    const headers = new HttpHeaders({
+      'apikey': this.supabaseKey,
+      'Authorization': `Bearer ${this.supabaseKey}`,
+      'Content-Type': 'application/json'
+    });
+    return this.http.post(this.supabaseUrl, [record], { headers });
   }
 }

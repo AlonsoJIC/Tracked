@@ -1,6 +1,25 @@
 <div class="tracking-table-wrapper">
-  <div *ngIf="loading">Cargando registros...</div>
-  <table *ngIf="!loading">
+  <h2 style="margin-bottom:1.2rem;font-weight:600;color:#6366f1;letter-spacing:-0.5px;">Panel de Visitantes</h2>
+  <div *ngIf="loading">Cargando información...</div>
+  <div *ngIf="!loading && visitor" class="visitor-warning"
+    style="background:#fff3cd;border:1px solid #ffeeba;padding:1rem;margin-bottom:1rem;border-radius:6px;color:#856404;">
+    <strong>¡Atención!</strong> Esta es tu información detectada:<br>
+    <ul>
+      <li><b>IP:</b> {{ visitor.ip }}</li>
+      <li><b>País:</b> {{ visitor.country }}</li>
+      <li><b>Ciudad:</b> {{ visitor.city }}</li>
+      <li><b>Región:</b> {{ visitor.region }}</li>
+      <li><b>Navegador:</b> {{ visitor.browser }}</li>
+      <li><b>SO:</b> {{ visitor.os }}</li>
+      <li><b>Dispositivo:</b> {{ visitor.device }}</li>
+      <li><b>ISP/ORG:</b> {{ visitor.org }}</li>
+      <li><b>ASN:</b> {{ visitor.asn }}</li>
+      <li><b>Referer:</b> {{ visitor.referer }}</li>
+      <li><b>Destino:</b> {{ visitor.destination_url }}</li>
+    </ul>
+  </div>
+
+  <table *ngIf="!loading && records.length > 0">
     <thead>
       <tr>
         <th>Fecha</th>

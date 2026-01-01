@@ -1,0 +1,37 @@
+<div class="tracking-table-wrapper">
+  <div *ngIf="loading">Cargando registros...</div>
+  <table *ngIf="!loading">
+    <thead>
+      <tr>
+        <th>Fecha</th>
+        <th>IP</th>
+        <th>País</th>
+        <th>Ciudad</th>
+        <th>Región</th>
+        <th>Navegador</th>
+        <th>SO</th>
+        <th>Dispositivo</th>
+        <th>ISP/ORG</th>
+        <th>ASN</th>
+        <th>Referer</th>
+        <th>Destino</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of records">
+        <td>{{ row.timestamp | date:'short' }}</td>
+        <td>{{ row.ip }}</td>
+        <td>{{ row.country }}</td>
+        <td>{{ row.city }}</td>
+        <td>{{ row.region }}</td>
+        <td>{{ row.browser }}</td>
+        <td>{{ row.os }}</td>
+        <td>{{ row.device }}</td>
+        <td>{{ row.org }}</td>
+        <td>{{ row.asn }}</td>
+        <td>{{ row.referer }}</td>
+        <td>{{ row.destination_url }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

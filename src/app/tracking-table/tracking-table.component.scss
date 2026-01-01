@@ -1,0 +1,26 @@
+.tracking-table-wrapper {
+  max-width: 100vw;
+  overflow-x: auto;
+  margin: 32px auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  padding: 24px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 0.98rem;
+}
+th {
+  background: #2d3748;
+  color: #fff;
+  font-weight: 600;
+}
+td {
+  color: #2d3748;
+}

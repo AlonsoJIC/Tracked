@@ -54,6 +54,33 @@ ng e2e
 
 Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
-## Additional Resources
+
+## Supabase Database Setup
+
+To use this project with your own Supabase database, create a table with the following SQL script:
+
+```sql
+create table link_tracking (
+	link_id text,
+	ip text,
+	user_agent text,
+	browser text,
+	os text,
+	device text,
+	referer text,
+	country text,
+	city text,
+	region text,
+	timestamp text,
+	destination_url text,
+	isp text,
+	org text,
+	asn text
+);
+```
+
+Luego, actualiza la URL y la API key de Supabase en el archivo `src/services/tracking.service.ts` para que apunten a tu proyecto y tabla.
+
+---
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
